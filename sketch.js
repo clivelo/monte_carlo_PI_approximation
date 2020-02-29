@@ -1,6 +1,7 @@
 const r = 200;
 let total = 0;
 let in_circle = 0
+let display;
 
 function setup() {
   createCanvas(r * 2, r * 2);
@@ -10,6 +11,7 @@ function setup() {
   translate(r, r);
   noFill();
   ellipse(0, 0, r * 2, r * 2);
+  display = createP();
 }
 
 function draw() {
@@ -35,5 +37,6 @@ function distance(x, y) {
 }
 
 function pi_estimate() {
-  console.log(4 * (in_circle / total));
+  let pi = 4 * (in_circle / total);
+  display.html(pi);
 }
